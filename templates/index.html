@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>챗봇</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #chat { height: 80vh; overflow-y: scroll; }
+        .message { margin-bottom: 1rem; display: flex; align-items: center; }
+        .message img { width: 40px; height: 40px; border-radius: 50%; }
+        .user { display: flex; flex-direction: row-reverse; }
+        .user .message-text { background-color: #f8e896; color: black; }
+        .chatbot .message-text { background-color: white; }
+        .message-text { padding: 0.5rem 1rem; border-radius: 1.25rem; margin-left: 1rem; }
+        #message-form { display: flex; align-items: center; }
+        #user_input { flex-grow: 1; margin-right: 0.5rem; border-radius: 1rem; border: 1px solid #ccc; padding: 0.5rem 1rem; }
+        #send-button { background: transparent; border: none; }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">宇宙猫</h1>
+        <div id="chat"></div>
+        <form id="message-form" class="mt-4">
+            <input type="text" id="user_input" name="user_input" required placeholder="메시지 입력...">
+            <button type="submit" id="send-button"><img src="plane_icon.png" alt="전송" width="24" height="24"></button>
+        </form>
+    </div>
+    <script>
+        $("#message-form").on("submit", function(e) {
+            e.preventDefault();
+            const user_input = $("#user_input").val();
+            $("#user_input").val("");  // 입력창 초기화
+            addMessage("user", user_input);
+
+            const prompt = "사용자: " + user_input + "\n챗봇: ";
+            fetch("/get_response?prompt=" + encodeURIComponent(prompt))
+                .then(response => response.text())
+                .then(response => {
+                    addMessage("chatbot", response);
+                });
+        });
+
+        function addMessage(sender, message) {
+            const img = sender === "user" ? "" : "<img src='static/robot_image.png' alt='로보트 프로필'>";
+            const messageElement = `<div class="message ${sender}">${img}<div class="message-text">${message}</div></div>`;
+            $("#chat").append(messageElement);
+            $("#chat").scrollTop($("#chat")[0].scrollHeight);  // 스크롤을 최신 메시지 위치로 이동
+        }
+    </script>
+</body>
+</html>
+
