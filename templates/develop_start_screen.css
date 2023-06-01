@@ -3,8 +3,8 @@ h1 {
     font-style: italic;
     color: #fff;
     position: absolute;
-    top: 160px;
-    left: 400px;
+    top: 20%;
+    left: 25%;
 }
 
 
@@ -15,11 +15,10 @@ body{
 }
 
 
-
 img {
         position: absolute;
-        top: 400px;
-        right: 200px;
+        top: 25%;
+        right: 10%;
 }
 
 
@@ -28,7 +27,7 @@ a {
   font-size: 30px;
   color: rgb(69, 206, 244);
   position: absolute;
-  bottom: 100px;
-  left: 600px;
+  bottom: 10%;
+  left: 45%;
 }
   
