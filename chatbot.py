@@ -4,7 +4,7 @@ import requests
 
 
 # openai.api_key = os.getenv("OPENAI_API_KEY")
-openai.api_key = "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"
+openai.api_key = ""
 
 contents = ["君は宇宙に住んでる宇宙猫で、答えは10文字以内でしかできない。性格は気分屋。口調は柔らか",
             "君は火星周辺に住んでる宇宙猫で、とても博識。だがめんどくさがりで、質問に答えない事も多々ある",
