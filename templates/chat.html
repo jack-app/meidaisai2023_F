@@ -1,25 +1,103 @@
-{% extends "base.html" %}
-{% block content %}
+<!-- {% extends "base.html" %} {% block content %}
+
 <div class="chatTemp">
+  <h2>宇宙猫</h2>
 
-    <h2>{{tpl_room_name}}</h2>
-
-    <div class="chatBox">
-        <div class="chatMessage">
-            {% for chat in chat_list%}
-            {% if tpl_my_id == chat["from"] %}
-            <p class="fromText"><span>{{chat["fromname"]}}:{{chat["message"]}}</span></p>
-            {% else %}
-            <p class="toText"><span>{{chat["fromname"]}}:{{chat["message"]}}</span></p>
-            {% endif %}
-            {% endfor %}
-        </div>
-        <form action="/chat/{{link_chatid}}" method="POST">
-            <input type="text" name="input_message" placeholder="メッセージを送信">
-            <input type="submit" value="送信">
-        </form>
+  <div class="chatBox">
+    <div class="chatMessage">
+      
+      {% for chat in chat_list%} {% if tpl_my_id == chat["from"] %}
+      <p class="fromText">
+        <span>{{chat["fromname"]}}:{{chat["message"]}}</span>
+      </p>
+      {% else %}
+      <p class="toText">
+        <span>{{chat["fromname"]}}:{{chat["message"]}}</span>
+      </p>
+      {% endif %} {% endfor %}
     </div>
+    <form action="/chat/{{link_chatid}}" method="POST">
+      <input type="text" name="input_message" placeholder="メッセージを送信" />
+      <input type="submit" value="送信" />
+    </form>
+  </div>
 </div>
 
+{% endblock %} -->
 
-{% endblock %}
+<!-- ここからこっとコピペ-->
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>チャット</title>
+
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script src="ダウンロード/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <!-- 自分やユーザーの情報 -->
+    <!-- <h3 id="me" user_id="1">あなたはユーザー1です</h3>
+    <h3 id="partner" thread_id="1">相手:宇宙猫</h3> -->
+
+    <!-- <div id="users">
+      宇宙猫
+      <button class="user" user_id="2">宇宙猫</button>
+    </div> -->
+    <br />
+    <div id="your_container">
+      <!-- チャットの外側部分① -->
+      <div id="bms_messages_container">
+        <!-- ヘッダー部分② -->
+        <div id="bms_chat_header">
+          <!--ステータス-->
+          <div id="bms_chat_user_status">
+            <!--ステータスアイコン-->
+            <div id="bms_status_icon">🐱</div>
+            <!--ユーザー名-->
+            <div id="bms_chat_user_name">宇宙猫</div>
+          </div>
+        </div>
+
+        <!-- タイムライン部分③ -->
+        <div id="bms_messages">
+          <!--メッセージ１（左側）-->
+
+          <div class="bms_message bms_left">
+            <img
+              src="http://2.bp.blogspot.com/-MrdX0JhwM9U/T65PZsmNS7I/AAAAAAAAAKM/SkTZHvBUMq8/s1600/1336023490071.png"
+              width="25%"
+            />
+            <div class="bms_message_box">
+              <div class="bms_message_content">
+                <div class="bms_message_text_left">テストです</div>
+              </div>
+            </div>
+          </div>
+          <div class="bms_clear"></div>
+          <!-- 回り込みを解除（スタイルはcssで充てる） -->
+
+          <!--メッセージ２（右側）-->
+          <div class="bms_message bms_right">
+            <div class="bms_message_box">
+              <div class="bms_message_content">
+                <div class="bms_message_text">了解！</div>
+              </div>
+            </div>
+          </div>
+          <div class="bms_clear"></div>
+          <!-- 回り込みを解除（スタイルはcssで充てる） -->
+        </div>
+
+        <!-- テキストボックス、送信ボタン④ -->
+        <div id="bms_send">
+          <textarea id="bms_send_message"></textarea>
+          <div id="bms_send_btn">送信</div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
