@@ -6,14 +6,15 @@
     <div class="userList">     
 
     {% for user_info in tpl_user_info %}
+        {% if user_info[1] != "あなた"%}
 
-        <div class="userCard">
-            <p class="userName">{{user_info[1]}}</p>
-            <form action="/chatroom/{{user_info[0]}}" method="POST">
-                <input type="submit" value="チャットする">
-            </form>
-        </div>
-
+            <div class="userCard">
+                <p class="userName">{{user_info[1]}}</p>
+                <form action="/chatroom/{{user_info[0]}}" method="POST">
+                    <input type="submit" value="チャットする">
+                </form>
+            </div>
+        {% endif %}
     {% endfor %}
 
     </div>
