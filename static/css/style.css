@@ -8,529 +8,474 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- html {
-    line-height: 1.15; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
-  }
-  
-  /* Sections
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
      ========================================================================== */
-  
-  /**
+
+/**
    * Remove the margin in all browsers.
    */
-  
-  body {
-    margin: 0;
-  }
-  
-  /**
+
+body {
+  margin: 0;
+}
+
+/**
    * Render the `main` element consistently in IE.
    */
-  
-  main {
-    display: block;
-    margin: 30px 50px;
-  }
-  
-  /**
+
+main {
+  display: block;
+  margin: 30px 50px;
+}
+
+/**
    * Correct the font size and margin on `h1` elements within `section` and
    * `article` contexts in Chrome, Firefox, and Safari.
    */
-  
-  h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-  }
-  
-  /* Grouping content
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
      ========================================================================== */
-  
-  /**
+
+/**
    * 1. Add the correct box sizing in Firefox.
    * 2. Show the overflow in Edge and IE.
    */
-  
-  hr {
-    box-sizing: content-box; /* 1 */
-    height: 0; /* 1 */
-    overflow: visible; /* 2 */
-  }
-  
-  /**
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
    * 1. Correct the inheritance and scaling of font size in all browsers.
    * 2. Correct the odd `em` font sizing in all browsers.
    */
-  
-  pre {
-    font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
-  }
-  
-  /* Text-level semantics
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
      ========================================================================== */
-  
-  /**
+
+/**
    * Remove the gray background on active links in IE 10.
    */
-  
-  a {
-    background-color: transparent;
-  }
-  
-  /**
+
+a {
+  background-color: transparent;
+}
+
+/**
    * 1. Remove the bottom border in Chrome 57-
    * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
    */
-  
-  abbr[title] {
-    border-bottom: none; /* 1 */
-    text-decoration: underline; /* 2 */
-    text-decoration: underline dotted; /* 2 */
-  }
-  
-  /**
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
    * Add the correct font weight in Chrome, Edge, and Safari.
    */
-  
-  b,
-  strong {
-    font-weight: bolder;
-  }
-  
-  /**
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
    * 1. Correct the inheritance and scaling of font size in all browsers.
    * 2. Correct the odd `em` font sizing in all browsers.
    */
-  
-  code,
-  kbd,
-  samp {
-    font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
-  }
-  
-  /**
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
    * Add the correct font size in all browsers.
    */
-  
-  small {
-    font-size: 80%;
-  }
-  
-  /**
+
+small {
+  font-size: 80%;
+}
+
+/**
    * Prevent `sub` and `sup` elements from affecting the line height in
    * all browsers.
    */
-  
-  sub,
-  sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-  }
-  
-  sub {
-    bottom: -0.25em;
-  }
-  
-  sup {
-    top: -0.5em;
-  }
-  
-  /* Embedded content
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
      ========================================================================== */
-  
-  /**
+
+/**
    * Remove the border on images inside links in IE 10.
    */
-  
-  img {
-    border-style: none;
-  }
-  
-  /* Forms
+
+img {
+  border-style: none;
+}
+
+/* Forms
      ========================================================================== */
-  
-  /**
+
+/**
    * 1. Change the font styles in all browsers.
    * 2. Remove the margin in Firefox and Safari.
    */
-  
-  button,
-  input,
-  optgroup,
-  select,
-  textarea {
-    font-family: inherit; /* 1 */
-    font-size: 100%; /* 1 */
-    line-height: 1.15; /* 1 */
-    margin: 0; /* 2 */
-  }
-  
-  /**
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
    * Show the overflow in IE.
    * 1. Show the overflow in Edge.
    */
-  
-  button,
-  input { /* 1 */
-    overflow: visible;
-  }
-  
-  /**
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
    * Remove the inheritance of text transform in Edge, Firefox, and IE.
    * 1. Remove the inheritance of text transform in Firefox.
    */
-  
-  button,
-  select { /* 1 */
-    text-transform: none;
-  }
-  
-  /**
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
    * Correct the inability to style clickable types in iOS and Safari.
    */
-  
-  button,
-  [type="button"],
-  [type="reset"],
-  [type="submit"] {
-    -webkit-appearance: button;
-  }
-  
-  /**
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
    * Remove the inner border and padding in Firefox.
    */
-  
-  button::-moz-focus-inner,
-  [type="button"]::-moz-focus-inner,
-  [type="reset"]::-moz-focus-inner,
-  [type="submit"]::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-  }
-  
-  /**
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
    * Restore the focus styles unset by the previous rule.
    */
-  
-  button:-moz-focusring,
-  [type="button"]:-moz-focusring,
-  [type="reset"]:-moz-focusring,
-  [type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText;
-  }
-  
-  /**
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
    * Correct the padding in Firefox.
    */
-  
-  fieldset {
-    padding: 0.35em 0.75em 0.625em;
-  }
-  
-  /**
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
    * 1. Correct the text wrapping in Edge and IE.
    * 2. Correct the color inheritance from `fieldset` elements in IE.
    * 3. Remove the padding so developers are not caught out when they zero out
    *    `fieldset` elements in all browsers.
    */
-  
-  legend {
-    box-sizing: border-box; /* 1 */
-    color: inherit; /* 2 */
-    display: table; /* 1 */
-    max-width: 100%; /* 1 */
-    padding: 0; /* 3 */
-    white-space: normal; /* 1 */
-  }
-  
-  /**
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
    * Add the correct vertical alignment in Chrome, Firefox, and Opera.
    */
-  
-  progress {
-    vertical-align: baseline;
-  }
-  
-  /**
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
    * Remove the default vertical scrollbar in IE 10+.
    */
-  
-  textarea {
-    overflow: auto;
-  }
-  
-  /**
+
+textarea {
+  overflow: auto;
+}
+
+/**
    * 1. Add the correct box sizing in IE 10.
    * 2. Remove the padding in IE 10.
    */
-  
-  [type="checkbox"],
-  [type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
-  }
-  
-  /**
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
    * Correct the cursor style of increment and decrement buttons in Chrome.
    */
-  
-  [type="number"]::-webkit-inner-spin-button,
-  [type="number"]::-webkit-outer-spin-button {
-    height: auto;
-  }
-  
-  /**
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
    * 1. Correct the odd appearance in Chrome and Safari.
    * 2. Correct the outline style in Safari.
    */
-  
-  [type="search"] {
-    -webkit-appearance: textfield; /* 1 */
-    outline-offset: -2px; /* 2 */
-  }
-  
-  /**
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
    * Remove the inner padding in Chrome and Safari on macOS.
    */
-  
-  [type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
-  
-  /**
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
    * 1. Correct the inability to style clickable types in iOS and Safari.
    * 2. Change font properties to `inherit` in Safari.
    */
-  
-  ::-webkit-file-upload-button {
-    -webkit-appearance: button; /* 1 */
-    font: inherit; /* 2 */
-  }
-  
-  /* Interactive
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
      ========================================================================== */
-  
-  /*
+
+/*
    * Add the correct display in Edge, IE 10+, and Firefox.
    */
-  
-  details {
-    display: block;
-  }
-  
-  /*
+
+details {
+  display: block;
+}
+
+/*
    * Add the correct display in all browsers.
    */
-  
-  summary {
-    display: list-item;
-  }
-  
-  /* Misc
+
+summary {
+  display: list-item;
+}
+
+/* Misc
      ========================================================================== */
-  
-  /**
+
+/**
    * Add the correct display in IE 10+.
    */
-  
-  template {
-    display: none;
-  }
-  
-  /**
+
+template {
+  display: none;
+}
+
+/**
    * Add the correct display in IE 10.
    */
-  
-  [hidden] {
-    display: none;
-  }
 
-* { 
-    font-family: "M PLUS Rounded 1c"; 
+[hidden] {
+  display: none;
 }
-a{
-    text-decoration: none;
+
+* {
+  font-family: "M PLUS Rounded 1c";
+}
+a {
+  text-decoration: none;
 }
 
 body {
-    background-color: #F3D1E5;
+  background-color: #f3d1e5;
 }
-
 
 /* ヘッダー部分 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 header {
-    background-color: #CE579B;
-    border-bottom: solid 5px #555555;
+  background-color: #ce579b;
+  border-bottom: solid 5px #555555;
 }
 
 header h1 {
-    margin: 20px;
+  margin: 20px;
 }
-
-
-
-
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
-
 
 .menu {
-    display: flex;
-    margin: 0 20px;
+  display: flex;
+  margin: 0 20px;
 }
 
-.menu a{
-    display: block;
-    font-size: 20px;
-    width: 150px;
-    text-align: center;
-    padding: 20px 10px;
-    margin: 0 10px;
+.menu a {
+  display: block;
+  font-size: 20px;
+  width: 150px;
+  text-align: center;
+  padding: 20px 10px;
+  margin: 0 10px;
 }
 
-
-
-.menu p:hover{
-    background-color: #A4C520;
-    border-radius: 10px;
-    transition: all .3s;
-    
+.menu p:hover {
+  background-color: #a4c520;
+  border-radius: 10px;
+  transition: all 0.3s;
 }
 
-
-
-.menu p a,h1{
-    color: white;
+.menu p a,
+h1 {
+  color: white;
 }
-
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* ログインページ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .login {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
 .loginForm {
-    margin: 60px;
+  margin: 60px;
 }
 
-.loginForm h2{
-    padding: 0 0 0 12px;
+.loginForm h2 {
+  padding: 0 0 0 12px;
 }
 
-.loginForm input[type="text"]{
-    height: 50px;
-    width: 300px;
-    font-size: 25px;
-    border-radius: 10px;
-    border: #555555 solid;
+.loginForm input[type="text"] {
+  height: 50px;
+  width: 300px;
+  font-size: 25px;
+  border-radius: 10px;
+  border: #555555 solid;
 }
 
-.loginForm input[type="submit"]{
-    height: 50px;
-    width: 100%;
-    border-radius: 50px;
-    background-color: #CE579B;
-    border: 0px;
-    color: white;
-    font-size: 20px;
+.loginForm input[type="submit"] {
+  height: 50px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #ce579b;
+  border: 0px;
+  color: white;
+  font-size: 20px;
 }
 
-.loginForm input[type="submit"]:hover{
-    background-color: #A4C520;
-    color: #000;
-    transition: all .3s;
+.loginForm input[type="submit"]:hover {
+  background-color: #a4c520;
+  color: #000;
+  transition: all 0.3s;
 }
 
 .login p {
-    margin: 10px;
+  margin: 10px;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* ユーザー一覧 */
 
-
-.userList{
-    display: flex;
-    flex-wrap: wrap;
-}
-.userCard{
-    position: relative;
-    display: flex;
-    width: 30%;
-    background-color: #CE579B;
-    color: white;
-    margin: 1%;
-    border-radius: 30px;
-}
-
-.userCard form{
-    position: absolute;
-    margin: auto;
-    top: 15px;
-    right: 25px;
-}
-
-.userCard input{
-    background-color: #42AAC7;
-    border: 0px;
-    font-size: 20px;
-    padding: 15px;
-    border-radius: 30px;
-    color: white;
-}
-
-.userCard input:hover{
-    background-color: #A4C520;
-    color: #000;
-    transition: all .3s;
-}
-.userName{
-    margin: 30px 0px 30px 25px;
-    font-size: 20px;
-}
-
-/* ////////////////////////////////////////////////////////// */
-
-/* チャットルーム一覧///////////////////////////////////////// */
-
-.roomList{
+.userList {
   display: flex;
   flex-wrap: wrap;
 }
-.roomCard{
+.userCard {
   position: relative;
   display: flex;
   width: 30%;
-  background-color: #CE579B;
+  background-color: #ce579b;
   color: white;
   margin: 1%;
   border-radius: 30px;
 }
 
-.roomCard form{
+.userCard form {
   position: absolute;
   margin: auto;
   top: 15px;
   right: 25px;
 }
 
-.roomCard input{
-  background-color: #42AAC7;
+.userCard input {
+  background-color: #42aac7;
   border: 0px;
   font-size: 20px;
   padding: 15px;
@@ -538,12 +483,56 @@ header h1 {
   color: white;
 }
 
-.roomCard input:hover{
-  background-color: #A4C520;
+.userCard input:hover {
+  background-color: #a4c520;
   color: #000;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-.roomName{
+.userName {
+  margin: 30px 0px 30px 25px;
+  font-size: 20px;
+}
+
+/* ////////////////////////////////////////////////////////// */
+
+/* チャットルーム一覧///////////////////////////////////////// */
+
+.roomList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.roomCard {
+  position: relative;
+  display: flex;
+  width: 30%;
+  background-color: #ce579b;
+  color: white;
+  margin: 1%;
+  border-radius: 30px;
+}
+
+.roomCard form {
+  position: absolute;
+  margin: auto;
+  top: 15px;
+  right: 25px;
+}
+
+.roomCard input {
+  background-color: #42aac7;
+  border: 0px;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 30px;
+  color: white;
+}
+
+.roomCard input:hover {
+  background-color: #a4c520;
+  color: #000;
+  transition: all 0.3s;
+}
+.roomName {
   margin: 30px 0px 30px 25px;
   font-size: 20px;
 }
@@ -551,60 +540,60 @@ header h1 {
 
 /* チャットページ */
 
-.chatBox{
+/* .chatBox {
   position: relative;
   padding: 30px;
-  border: #CE579B 4px solid ;
+  border: #146c94 4px solid;
   border-radius: 10px;
-  background-color: #eeeeee;
-  
-  
+ 
+  background-image: url(https://photo.16pic.com/00/54/14/16pic_5414492_b.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-.chatMessage{
+
+
+.chatMessage p {
   padding: 10px;
   margin-bottom: 20px;
   overflow: auto;
   height: 600px;
-}
+ 
 
-
-
-
-.fromText{
+.fromText {
   text-align: right;
 }
 
-.chatBox input[type="text"]{
+.chatBox input[type="text"] {
   box-shadow: 2px 2px inset rgb(119, 119, 119);
   border: 0px;
   width: 70%;
   height: 50px;
   border-radius: 30px;
   font-size: 20px;
+  background-color: #dbdfea;
 }
 
-.chatBox input[type="submit"]{
+.chatBox input[type="submit"] {
   margin-left: 10px;
   width: 20%;
   height: 50px;
   border-radius: 20px;
   border: 0px;
-  background-color: #CE579B;
+  background-color: #8294c4;
   color: white;
   font-size: 20px;
 }
 
-.chatBox input[type="submit"]:hover{
-  border: 3px solid #CE579B;
-  color: #CE579B;
+.chatBox input[type="submit"]:hover {
+  border: 3px solid #1d267d;
+  color: #1d267d;
   background-color: white;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
-
-
-.chatBox p span{
+.chatBox p span {
   display: inline-block;
   font-size: 20px;
   padding: 15px;
@@ -612,13 +601,182 @@ header h1 {
   max-width: 50%;
 }
 
-.fromText span{
-  background-color: #A4C520;
-  color: white;
+.fromText span {
+  background-color: #19a7ce;
+  color: #f6f1f1;
 }
 
-.toText span{
-  background-color: #42AAC7;
+.toText span {
+  background-color: #146c94;
   color: white;
+} */
+
+/* こっとコピペ */
+
+#your_container {
+  /* 高さや幅など、好きな様に設定
+  bms_messages_containerの方で、縦横いっぱいに広がってくれるので、
+  ここで充てた高さと横幅がそのままスタイルになる仕組み */
+
+  height: 600px; /*ここはご自由に*/
+  width: 100%; /*ここはご自由に*/
+}
+/* チャットの外側部分① */
+#bms_messages_container {
+  height: 100%; /*your_containerに対して100%になる */
+  width: 100%; /*your_containerに対して100%になる */
+  /* background-color: #eee; */
 }
 
+/* ヘッダー部分② */
+#bms_chat_header {
+  padding: 6px; /*隙間調整*/
+  font-size: 16px;
+  height: 34px;
+  background: #8294c4;
+  border: 1px solid #8294c4;
+}
+/* ステータスマークとユーザー名 */
+#bms_chat_user_status {
+  float: left; /* bms_chat_headerに対して左寄せ */
+}
+/* ステータスマーク */
+#bms_status_icon {
+  float: left; /* bms_chat_user_statusに対して左寄せ */
+  line-height: 2em; /*高さ調整*/
+}
+/* ユーザー名 */
+#bms_chat_user_name {
+  float: left; /* bms_chat_user_statusに対して左寄せ */
+  line-height: 2em; /*高さ調整*/
+  padding-left: 8px;
+}
+
+/* タイムライン部分③ */
+#bms_messages {
+  overflow: auto; /* スクロールを効かせつつ、メッセージがタイムラインの外に出ないようにする */
+  height: 100%; /*テキストエリアが下に張り付く様にする*/
+  border-right: 1px solid #8294c4;
+  border-left: 1px solid #8294c4;
+
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2) inset; /*ヘッダーの下に影を入れる*/
+  background-image: url(https://photo.16pic.com/00/54/14/16pic_5414492_b.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/* メッセージ全般のスタイル */
+.bms_message {
+  margin: 0px;
+  padding: 0 14px; /*吹き出しがタイムラインの側面にひっつかない様に隙間を開ける*/
+  font-size: 16px;
+  word-wrap: break-word; /* 吹き出し内で自動で改行 */
+  white-space: normal; /*指定widthに合わせて、文字を自動的に改行*/
+}
+/*
+         *追加
+         */
+.bms_message_box {
+  margin-top: 20px; /*上下の吹き出しがひっつかない様に隙間を入れる*/
+  max-width: 100%; /*文字が長くなった時に吹き出しがタイムラインからはみ出さない様にする*/
+  font-size: 16px;
+}
+/*
+          *追加
+          */
+.bms_message_content {
+  padding: 20px; /*文字や画像（コンテンツ）の外側に隙間を入れる*/
+}
+
+/* メッセージ１（左側） */
+.bms_left {
+  float: left; /*吹き出しをbms_messagesに対して左寄せ*/
+  line-height: 1.3em;
+}
+/*
+          *追加
+          */
+.bms_left .bms_message_box {
+  color: #333; /*テキストを黒にする*/
+  background: #fff;
+  border: 2px solid #146c94;
+  border-radius: 30px 30px 30px 0px; /*左下だけ尖らせて吹き出し感を出す*/
+  margin-right: 50px; /*左側の発言だとわかる様に、吹き出し右側に隙間を入れる*/
+}
+
+.bms_left {
+  display: flex;
+}
+.bms_left img {
+  border-radius: 500px;
+  position: relative;
+  top: 50px;
+}
+/* メッセージ２（右側） */
+.bms_right {
+  float: right; /*吹き出しをbms_messagesに対して右寄せ*/
+  line-height: 1.3em;
+}
+/*
+          *追加
+          */
+.bms_right .bms_message_box {
+  color: #fff; /*テキストを白にする*/
+  background: #146c94;
+  border: 2px solid #146c94;
+  border-radius: 30px 30px 0px 30px; /*右下だけ尖らせて吹き出し感を出す*/
+  margin-left: 50px; /*右側の発言だとわかる様に、吹き出し左側に隙間を入れる*/
+}
+/* メッセージ１（左側） */
+.bms_left {
+  float: left; /*吹き出しをbms_messagesに対して左寄せ*/
+  line-height: 1.3em;
+}
+/* メッセージ２（右側） */
+.bms_right {
+  float: right; /*吹き出しをbms_messagesに対して右寄せ*/
+  line-height: 1.3em;
+}
+/* 回り込みを解除 */
+.bms_clear {
+  clear: both; /* 左メッセージと右メッセージの回り込み(float)の効果の干渉を防ぐために必要（これが無いと、自分より下のメッセージにfloatが影響する） */
+}
+
+/* テキストエリア、送信ボタン④ */
+#bms_send {
+  background-color: #8294c4; /*タイムラインの色と同じにする*/
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  height: 48px;
+  padding: 4px;
+}
+#bms_send_message {
+  width: calc(100% - 75px); /*常に送信ボタンの横幅を引いたサイズに動的に計算*/
+  line-height: 16px;
+  height: 48px;
+  padding: 14px 6px 0px 6px; /*文字がテキストエリアの中心になる様に隙間調整*/
+  border: 1px solid #ccc;
+  border-radius: 4px; /*角丸*/
+  text-align: left; /*文字を左寄せ*/
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.2) inset; /*内側に影を入れてテキストエリアらしくした*/
+  box-sizing: border-box; /*paddingとborderの要素の高さと幅の影響をなくす（要素に高さと幅を含める）*/
+}
+#bms_send_btn {
+  width: 72px;
+  height: 48px;
+  font-size: 16px;
+  line-height: 3em;
+  float: right; /*bms_sendに対して右寄せ*/
+  color: #fff;
+  font-weight: bold;
+  background: #8294c4;
+  text-align: center; /*文字をボタン中央に表示*/
+  border: 1px solid #bbb;
+  border-radius: 4px; /*角丸*/
+  box-sizing: border-box; /*paddingとborderの要素の高さと幅の影響をなくす（要素に高さと幅を含める）*/
+}
+#bms_send_btn:hover {
+  background: #146c94; /*マウスポインタを当てた時にアクティブな色になる*/
+  cursor: pointer; /*マウスポインタを当てた時に、カーソルが指の形になる*/
+}
