@@ -1,4 +1,5 @@
 from flask import *   # Flaskのなかみを全部持ってくる
+from chatbot import chatbot
 import sqlite3  # sqliteつかいます
 app = Flask(__name__)  # アプリの設定
 
@@ -7,7 +8,21 @@ app.secret_key = 'dskfjmvdngbsnmiovenajovneov'  # 秘密鍵の設定
 
 @app.route("/")
 def jump():
-    return redirect("/login")
+    conn = sqlite3.connect('chattest.db')
+    c = conn.cursor()
+    c.execute("select id from user")
+    ids=c.fetchall()
+    id = 1
+    for n in ids:
+        if n[0] > id:
+            id = n[0]
+
+    c.execute("insert into user values(?,?)",(id+1,'あなた'))
+    conn.commit()
+    conn.close()
+    session['user_id'] = id+1
+
+    return redirect("/userlist")
 
 
 # ユーザーを全て表示
@@ -18,12 +33,15 @@ def userlist():
     c.execute("select id, name from user")
     user_info = c.fetchall()
     conn.close()
+    print("----------------")
+    print(user_info)
     return render_template("userlist.html", tpl_user_info=user_info)
 
 
 # /userlistで「チャットする」ボタンを押したときに動くプログラム。チャットルームがなければ(まだチャットしたことのない相手であれば)新規作成。
 @app.route("/chatroom/<int:other_id>", methods=["POST"])
 def chatroom_post(other_id):
+    print(session)
     if "user_id" in session:
         # まずはチャットルームがあるかchatidをとってくる
         my_id = session["user_id"]
@@ -33,7 +51,6 @@ def chatroom_post(other_id):
         c.execute(
             "select id from chat where (user_id1 = ? and user_id2 = ?) or (user_id1 = ? and user_id2 = ?)", (my_id, other_id, other_id, my_id))
         chat_id = c.fetchone()
-
         print(chat_id)
         # とってきたidの中身で判定。idがNoneであれば作成、それ以外(数字が入っていれば)スルー
         if chat_id == None:
@@ -43,7 +60,7 @@ def chatroom_post(other_id):
             c.execute("select name from user where id = ?", (other_id,))
             othername = c.fetchone()[0]
             # ルーム名を作る
-            room = myname + "と" + othername + "のチャット"
+            room =othername + "のへや"
             c.execute("insert into chat values(null,?,?,?)",
                       (my_id, other_id, room))
             conn.commit()
@@ -54,24 +71,6 @@ def chatroom_post(other_id):
         conn.close()
         print(chat_id)
         return redirect("/chat/{}".format(chat_id[0]))
-    else:
-        return redirect("/login")
-
-
-# 自分のチャットルーム一覧を表示するプログラム
-@app.route("/chatroom")
-def chatroom_get():
-    if "user_id" in session:
-        my_id = session["user_id"]
-        conn = sqlite3.connect('chattest.db')
-        c = conn.cursor()
-        # ここにチャットルーム一覧をDBからとって、表示するプログラム
-        c.execute(
-            "select id, room from chat where user_id1 = ? or user_id2 = ?", (my_id, my_id))
-        chat_list = c.fetchall()
-        return render_template("/chatroom.html", tpl_chat_list=chat_list)
-    else:
-        return redirect("/login")
 
 
 # チャットルーム表示
@@ -93,8 +92,6 @@ def chat_get(chatid):
         room_name = c.fetchone()[0]
         c.close()
         return render_template("chat.html", chat_list=chat_info, link_chatid=chatid, tpl_room_name=room_name, tpl_my_id=my_id)
-    else:
-        return redirect("/login")
 
 
 # チャット送信時のプログラム
@@ -119,56 +116,15 @@ def chat_post(chatid):
                   (chatid, to_id, my_id, chat_message))
         conn.commit()
         c.close()
+        # ChatGPTによる返答の格納
+        c = conn.cursor()
+        c.execute("insert into chatmess values(null,?,?,?,?)",
+                  (chatid, my_id, to_id, chatbot(to_id, chat_message)))
+        conn.commit()
+        c.close()
+        
 
         return redirect("/chat/{}".format(chatid))
-    else:
-        return redirect("/login")
-
-
-# ログイン画面表示
-@app.route("/login")
-def login_get():
-    return render_template("login.html")
-
-
-# ログインするプログラム。
-@app.route("/login", methods=["POST"])
-def login():
-    name = request.form.get("name")
-    password = request.form.get("password")
-    conn = sqlite3.connect('chattest.db')
-    c = conn.cursor()
-    c.execute(
-        "select id from user where name = ? and password = ?", (name, password))
-    user_id = c.fetchone()
-    conn.close()
-    print(type(user_id))
-    if user_id is None:
-        return render_template("login.html")
-    else:
-        session['user_id'] = user_id[0]
-        return redirect("/userlist")
-
-
-# アカウント作成(新規ユーザー登録)プログラム
-@app.route("/regist", methods=["POST"])
-def regist():
-    name = request.form.get("name")
-    password = request.form.get("password")
-    conn = sqlite3.connect('chattest.db')
-    c = conn.cursor()
-    c.execute("insert into user values(null,?,?)", (name, password))
-    conn.commit()
-    conn.close()
-    return redirect("/login")
-
-
-# ログアウト
-@app.route("/logout")
-def logout():
-    session.pop('user_id', None)
-    return redirect("/login")
-
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
