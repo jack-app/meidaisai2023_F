@@ -22,7 +22,11 @@ def jump():
     conn.close()
     session['user_id'] = id+1
 
-    return redirect("/userlist")
+    return redirect("/start")
+
+@app.route("/start")
+def start():
+    return render_template("start.html")
 
 
 # ユーザーを全て表示

@@ -1,0 +1,90 @@
+h1 {
+    font-size: 100px;
+    font-style: italic;
+    color: #fff;
+    /* position: absolute; */
+    /* top: 20%;
+    left: 25%; */
+}
+
+
+
+body{
+    background-image: url(../image/23750266.jpg);
+    background-size: cover;
+}
+
+
+img {
+        /* position: absolute; */
+        /* top: 25%;
+        right: 10%; */
+}
+
+
+
+a {
+  font-size: 30px;
+  color: rgb(69, 206, 244);
+  position: absolute;
+  text-align: center;
+  /* bottom: 10%; */
+  margin-bottom: 20%;
+  left: 45%;
+}
+  
+.title { 
+  display:flex;
+  
+}
+
+.explanation {
+  font-style: italic;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 15%;
+  transform: translate(-50%,-50%);
+  background-color: white;
+  opacity: 0.5;
+  text-align: center;
+  text-shadow: 2px 2px 2px 2px white;
+}
+
+.explanation p {
+  font-size: 25px;
+}
+
+li{
+  display: inline-block;
+  list-style: none;
+}
+@media screen and (min-width: 1180px) {
+	/* 1180px以上に適用されるCSS（タブレット用） */
+  .title {
+    margin-left:20%;
+  }
+  .explanation {
+    margin-top:  10%;
+  }
+  
+}
+
+.button {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #ff7f7f;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border        : 2px solid #ff7f7f;    /* 枠の指定 */
+}
+.button:hover {
+  color         : #ff7f7f;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
